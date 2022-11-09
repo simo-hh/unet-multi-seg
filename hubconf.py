@@ -25,7 +25,7 @@ def unet_carvana(pretrained=False, scale=0.5, **kwargs):
     return net
 
 def custom(checkpoint: Path = None, **kwargs):
-    net = _UNet(**{**dict(n_channels=3, n_classes=2, bilinear=False), **kwargs})
+    net = _UNet(**{**dict(n_channels=3, n_classes=11, bilinear=False), **kwargs})
     if checkpoint is not None:
         net.load_state_dict(torch.load(checkpoint))
     return net.eval()
