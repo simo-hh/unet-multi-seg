@@ -54,7 +54,6 @@ class BasicDataset(Dataset):
 
     @classmethod
     def mask_to_class(cls, mask: np.ndarray, mapping):
-        mask = mask.reshape((1, 64, 64))
         mask_ = np.zeros((mask.shape[1], mask.shape[2]))
         for k in mapping:
             k_array = np.array(k)
